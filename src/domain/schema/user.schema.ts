@@ -4,7 +4,7 @@ import { Document } from 'mongoose';
 
 export type UserDocument = User & Document;
 
-@Schema({ timestamps: true, collection: 'Users' })
+@Schema({ timestamps: true, collection: 'usuarios' })
 export class User {
   @Prop({ required: true })
   id: number;

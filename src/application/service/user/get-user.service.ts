@@ -8,7 +8,7 @@ export class GetUserService {
   async validateUserById(id: number): Promise<void> {
     const anime = await this.userRepository.find({ id });
     if (anime.length === 0) {
-      throw new BadRequestException('Esse id de user não existe!');
+      throw new BadRequestException('Esse id de usuário não existe!');
     }
   }
 }
