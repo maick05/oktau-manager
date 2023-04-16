@@ -12,11 +12,12 @@ export class Anime {
 }
 
 export interface UltimoEpisodio {
-  temporada: number;
+  temporada?: number;
   episodio: number;
 }
 
 export interface Avaliacao {
+  nota: number;
   media: number;
   animacao: number;
   enredo: number;

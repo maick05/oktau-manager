@@ -7,6 +7,7 @@ export class CreateAnimeService {
   constructor(private readonly animeRepository: AnimeRepository) {}
 
   async createAnime(anime: Anime): Promise<void> {
+    console.log(anime);
     await this.animeRepository.insert(anime);
   }
 }
