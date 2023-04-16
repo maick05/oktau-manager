@@ -9,14 +9,21 @@ export class GetAnimeService {
     private readonly animeReviewRepository: AnimeReviewRepository,
   ) {}
 
-  async validateAnimeByCode(code: string): Promise<void> {
+  async validateAnimeByCodeIfAlreadyExists(code: string): Promise<void> {
     const anime = await this.animeRepository.find({ code });
     if (anime.length > 0) {
       throw new BadRequestException('Esse código de anime já existe!');
     }
   }
 
-  async validateAnimeByName(name: string): Promise<void> {
+  async validateAnimeByCode(code: string): Promise<void> {
+    const anime = await this.animeRepository.find({ code });
+    if (anime.length === 0) {
+      throw new BadRequestException('Esse código de anime não existe!');
+    }
+  }
+
+  async validateAnimeByNameIfAlreadyExists(name: string): Promise<void> {
     const anime = await this.animeRepository.find({
       $or: [{ name }, { alias: name }],
     });

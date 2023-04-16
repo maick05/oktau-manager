@@ -5,12 +5,14 @@ import {
   AnimeReview,
   AnimeReviewSchema,
 } from 'src/domain/schema/anime-reviews.schema';
+import { UserModule } from './user.module';
 
 @Module({
   imports: [
     MongooseModule.forFeature([
       { name: AnimeReview.name, schema: AnimeReviewSchema },
     ]),
+    UserModule,
   ],
   controllers: [],
   providers: [AnimeReviewRepository],

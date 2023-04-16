@@ -6,11 +6,13 @@ import { Anime } from 'src/domain/model/anime.model';
 import { AnimeSchema } from 'src/domain/schema/anime.schema';
 import { AnimeReviewModule } from './anime-review.module';
 import { GetAnimeService } from 'src/application/service/anime/get-anime.service';
+import { UserModule } from './user.module';
 
 @Module({
   imports: [
     MongooseModule.forFeature([{ name: Anime.name, schema: AnimeSchema }]),
     AnimeReviewModule,
+    UserModule,
   ],
   controllers: [],
   providers: [CreateAnimeService, GetAnimeService, AnimeRepository],
