@@ -21,11 +21,14 @@ export class Anime {
 
   @Prop({ required: true })
   categorias: Categoria[];
+
+  @Prop({ required: false })
+  alias: string[];
 }
 
 const schema = SchemaFactory.createForClass(Anime);
 
-schema.index({ name: 1 }, { unique: true });
+schema.index({ nome: 1 }, { unique: true });
 schema.index({ code: 1 }, { unique: true });
 
 export const AnimeSchema = schema;

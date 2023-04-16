@@ -1,12 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import {
-  Avaliacao,
-  Categoria,
-  Status,
-  UltimoEpisodio,
-} from '../model/anime.model';
+import { Avaliacao, Status, UltimoEpisodio } from '../model/anime-review.model';
 
 export type AnimeReviewDocument = AnimeReview & Document;
 

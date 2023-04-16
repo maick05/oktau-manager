@@ -1,38 +1,10 @@
 export class Anime {
+  code: string;
   nome: string;
-  idUsuario: number;
   descricao?: string;
-  status: Status;
   finalizado: boolean;
-  dataInicio: Date;
-  dataUltimaVisualizacao?: Date;
   categorias: Categoria[];
-  avaliacao?: Avaliacao;
-  ultimoEpisodio?: UltimoEpisodio;
-}
-
-export interface UltimoEpisodio {
-  temporada?: number;
-  episodio: number;
-}
-
-export interface Avaliacao {
-  nota: number;
-  media: number;
-  animacao: number;
-  enredo: number;
-  objetividade: number;
-  roteiro: number;
-  originalidade: number;
-  expansaoUniverso: number;
-  antiCliche: number;
-  trilha: number;
-}
-
-export enum Status {
-  NAO_VISTO = 1,
-  INICIADO = 2,
-  COMPLETO = 3,
+  alias?: string[];
 }
 
 export enum Categoria {

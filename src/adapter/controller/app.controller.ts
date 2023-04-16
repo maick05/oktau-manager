@@ -1,5 +1,5 @@
-import { Body, Controller, Post } from '@nestjs/common';
-import { CreateAnimeService } from '../../application/service/app.service';
+import { Body, Controller, Get, Post } from '@nestjs/common';
+import { CreateAnimeService } from '../../application/service/anime/create-anime.service';
 import { Anime } from 'src/domain/model/anime.model';
 import { AnimeReview } from 'src/domain/schema/anime-reviews.schema';
 
