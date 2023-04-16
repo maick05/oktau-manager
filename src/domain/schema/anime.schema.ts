@@ -10,33 +10,36 @@ import {
 
 export type AnimeDocument = Anime & Document;
 
-@Schema({ timestamps: true, collection: 'features' })
+@Schema({ timestamps: true, collection: 'animes' })
 export class Anime {
-  @Prop({ required: false })
+  @Prop({ required: true })
+  idUsuario: number;
+
+  @Prop({ required: true })
   nome: string;
 
   @Prop({ required: false })
   descricao?: string;
 
-  @Prop({ required: false })
+  @Prop({ required: true })
   status: Status;
 
-  @Prop({ required: false })
+  @Prop({ required: true })
   finalizado: boolean;
 
-  @Prop({ required: false })
+  @Prop({ required: true })
   dataInicio: Date;
 
   @Prop({ required: false })
   dataUltimaVisualizacao?: Date;
 
-  @Prop({ required: false })
+  @Prop({ required: true })
   categorias: Categoria[];
 
-  @Prop({ required: false })
+  @Prop({ required: false, type: Object })
   avaliacao?: Avaliacao;
 
-  @Prop({ required: false })
+  @Prop({ required: false, type: Object })
   ultimoEpisodio?: UltimoEpisodio;
 }
 

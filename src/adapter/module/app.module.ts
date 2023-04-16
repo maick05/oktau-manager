@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { AppController } from '../controller/app.controller';
-import { AppService } from '../../application/service/app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import configuration from '../config/configuration';
+import { AnimeModule } from './anime.module';
 
 @Module({
   imports: [
@@ -18,8 +18,9 @@ import configuration from '../config/configuration';
       isGlobal: true,
       load: [configuration],
     }),
+    AnimeModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [],
 })
 export class AppModule {}

@@ -1,12 +1,13 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from '../../application/service/app.service';
+import { Controller, Post } from '@nestjs/common';
+import { CreateAnimeService } from '../../application/service/app.service';
+import { Anime } from 'src/domain/model/anime.model';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly createAnimeService: CreateAnimeService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Post('/anime')
+  async createAnime(anime: Anime): Promise<void> {
+    await this.createAnimeService.createAnime(anime);
   }
 }

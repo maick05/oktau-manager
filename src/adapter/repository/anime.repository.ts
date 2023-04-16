@@ -13,4 +13,10 @@ export class AnimeRepository extends MongooseRepository<Anime, AnimeDocument> {
   ) {
     super(model);
   }
+
+  async insert(anime: Anime): Promise<void> {
+    this.logger.log(`Criando anime "${anime.nome}"...`);
+    await this.model.create(anime);
+    this.logger.log(`Anime criado com sucesso!`);
+  }
 }

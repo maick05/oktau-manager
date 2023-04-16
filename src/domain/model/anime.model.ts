@@ -1,5 +1,6 @@
 export class Anime {
   nome: string;
+  idUsuario: number;
   descricao?: string;
   status: Status;
   finalizado: boolean;
