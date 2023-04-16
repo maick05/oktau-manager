@@ -13,7 +13,7 @@ export enum Categoria {
   SEINEI = 'Seinen',
   ESPIRITUAL = 'Espiritual',
   DRAMA = 'Drama',
-  NINJA = 'Nija',
+  NINJA = 'Ninja',
   LUTA = 'Luta',
   SUSPENSE = 'Suspense',
   INVESTIGACAO = 'Investigação',
